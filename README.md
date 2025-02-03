@@ -1,7 +1,7 @@
 2025-OBJPROG-WK02S01E05
 Week 02 - Introduction to Java Programming
 
-Exercise # 04 - Guided Coding Exercise: Arithmetic Operators and Operator Precedence
+Exercise # 05 - Guided Coding Exercise: Utilizing the Java Math API Library
 
 ## **Instructions**
 
@@ -77,111 +77,84 @@ Only perform this if this is the first time you will setup your Git Environment
 
 ### **Step 3: Complete the Assignment**
 
-**Exercise # 04 - Guided Coding Exercise: Arithmetic Operators and Operator Precedence**
+**Exercise # 05 - Guided Coding Exercise: Utilizing the Java Math API Library**
 
    **Objective:**
-   - Apply arithmetic operators in Java.
-   - Understand operator precedence with step-by-step calculation.
+   - Use basic Math library functions such as power, square root, rounding, and generating random numbers.
 
    **File Naming Convention:**
-   - `ArithmeticDemo.java`
+   - `MathLibraryDemo.java`
 
    **Notable Observations (to be discussed after completing the exercise):**
-   - Pay close attention to the output of the division and modulus operations. Understand how integer division works and what the modulus operator gives you.
-   - Carefully trace the calculation of expressionResult to understand how operator precedence works.
+   - The Math.pow() method takes two arguments (base and exponent) and returns a double.
+   - The Math.sqrt() method takes one argument and returns a double.
+   - The Math.round() method returns a long (whole number).
+   - Math.random() generates a pseudo-random number between 0.0 and 1.0. Each time you run the program, you'll get a different random number.
 
    **Java Programming Best Practices:**
-   - Use meaningful variable names (e.g., sum instead of just s).
-   - Add comments to explain your code, especially when demonstrating concepts like operator precedence.
-   - Use parentheses () to explicitly control the order of operations, even if you know the default precedence. This makes your code clearer.
+   - Use descriptive variable names.
+   - Add comments to explain what your code does.
+   - Remember that the Math class is part of the java.lang package, so you don't need to import it explicitly. It's automatically available in all Java programs.
       
 **Step-by-Step Instructions:**
 
 1. Class and Main Method
-   - Create a file named `ArithmeticDemo.java`.
-   - Define the class `ArithmeticDemo` and its main method.
+   - Create a file named `MathLibraryDemo.java`.
+   - Define the class `MathLibraryDemo ` and its `main` method.
    ```Java
-   public class ArithmeticDemo {
+   public class MathLibraryDemo {
        public static void main(String[] args) {
    
        }
    }
    ```
 
-2. Declare and Initialize Integer Variables
-   - Inside the `main` method, declare two integer variables, `num1` and `num2`.
-   - Initialize `num1` with the value 10.
-   - Initialize `num2` with the value 5.
+2. Calculate Power
+   - Declare a double variable named `base`. Initialize it with a number (e.g., 2).
+   - Declare an integer variable named `exponent`. Initialize it with a number (e.g., 3).
+   - Use `Math.pow(base, exponent)` to calculate the `power` (base raised to the exponent) and store the result in a double variable named `powerResult`.
    ```Java
-   int num1 = 10;
-   int num2 = 5;
+   double base = 2;
+   int exponent = 3;
+   double powerResult = Math.pow(base, exponent);
    ```
          
-3. Declare and Initialize a Double Variable
-   - Declare a double variable named `num3`.
-   - Initialize `num3` with the value 3.0.
+3. Calculate Square Root
+   - Declare a double variable named `numberForSqrt`. Initialize it with a number (e.g., 16).
+   - Use `Math.sqrt(numberForSqrt)` to calculate the square root and store the result in a double variable named `sqrtResult`.
    ```Java
-   double num3 = 3.0;
+   double numberForSqrt = 16;
+   double sqrtResult = Math.sqrt(numberForSqrt);
    ```
 
-4. Perform Addition
-   - Declare an integer variable named `sum`.
-   - Calculate the sum of `num1` and `num2` and store the result in `sum`.
+4. Round a Decimal Number
+   - Declare a double variable named `decimalNumber`. Initialize it with a decimal value (e.g., 5.67).
+   - Use `Math.round(decimalNumber)` to round the decimal number to the nearest whole number (long) and store the result in a long variable named roundedNumber.
    ```Java
-   int sum = num1 + num2;
+   double decimalNumber = 5.67;
+   long roundedNumber = Math.round(decimalNumber);
    ```
    
-5. Perform Subtraction
-   - Declare an integer variable named `difference`.
-   - Calculate the difference between `num1` and `num2` and store the result in `difference`.
+5. Generate a Random Number
+   - Use `Math.random()` to generate a random number between 0.0 (inclusive) and 1.0 (exclusive). Store this random number in a double variable named `randomNumber`.
    ```Java
-   int difference = num1 - num2;
+   double randomNumber = Math.random();
    ```
    
-6. Perform Multiplication
-   - Declare an integer variable named `product`.
-   - Calculate the product of `num1` and `num2` and store the result in `product`.
+6. Output the Results
+   - Use `System.out.println()` to display the value of `powerResult` with a descriptive label (e.g., "Power: ").
+   - Do the same for `sqrtResult`, r`oundedNumber`, and `randomNumber`, each with a clear label.
    ```Java
-   int product = num1 * num2;
+   System.out.println("Power: " + powerResult);
+   System.out.println("Square Root: " + sqrtResult);
+   System.out.println("Rounded Number: " + roundedNumber);
+   System.out.println("Random Number: " + randomNumber);
    ```
    
-7. Perform Integer Division
-   - Declare an integer variable named `quotient`.
-   - Calculate the integer division of `num1` by `num2` and store the result in `quotient`.  (Remember, integer division truncates any decimal part).
-   ```Java
-   int quotient = num1 / num2;
-   ```
-
-8. Perform Modulus Operation
-   - Declare an integer variable named `remainder`.
-   - Calculate the remainder of the division of `num1` by `num2` (using the modulus operator `%`) and store the result in `remainder`.
-   ```Java
-   int remainder = num1 % num2;
-   ```
-
-9. Demonstrate Operator Precedence
-   - Declare an integer variable named `expressionResult`.
-   - Calculate the result of the following expression and store it in `expressionResult`: `num1 + num2 * 2 - (num1 / num2)`.  Pay attention to the order of operations (multiplication and division before addition and subtraction). The parentheses enforce the division to happen first.
-   ```Java
-   int expressionResult = num1 + num2 * 2 - (num1 / num2);
-   ```
-
-10. Output the Results
-   - Use System.out.println() to print the value of sum with a descriptive label (e.g., "Sum: ").
-   - Do the same for difference, product, quotient, remainder, and expressionResult.  Make sure each output has a clear label.  For the expressionResult, explain the order of operations used in the calculation in a comment.
-   ```Java
-   System.out.println("Sum: " + sum);
-   System.out.println("Difference: " + difference);
-   System.out.println("Product: " + product);
-   System.out.println("Quotient: " + quotient);
-   System.out.println("Remainder: " + remainder);
-   System.out.println("Expression Result: " + expressionResult); // Explain order of operations
-   ```
-
-11. Compile and Run
-   - Save the file as `ArithmeticDemo.java`.
-   - Compile: `javac ArithmeticDemo.java`
-   - Run: `java ArithmeticDemo`
+7. Compile and Run
+   - Save the file as `MathLibraryDemo.java`.
+   - Compile: `javac MathLibraryDemo.java`
+   - Run: `java MathLibraryDemo`
 
 ### **Step 4: Push Changes to GitHub**
 Once you've completed your changes, follow these steps to upload your work to your GitHub repository.
@@ -205,7 +178,7 @@ Once you've completed your changes, follow these steps to upload your work to yo
    Write a meaningful commit message:
    
    ```bash
-   git commit -m "Submitting OBJPROG Week 02 - Session 01 - Exercise 04"
+   git commit -m "Submitting OBJPROG Week 02 - Session 01 - Exercise 05"
    ```
    
 4. Push your changes to GitHub:
