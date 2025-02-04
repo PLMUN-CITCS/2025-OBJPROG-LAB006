@@ -1,7 +1,7 @@
-2025-OBJPROG-WK02S01E05
+2025-OBJPROG-WK02S0E02
 Week 02 - Introduction to Java Programming
 
-Exercise # 05 - Guided Coding Exercise: Utilizing the Java Math API Library
+Exercise # 05 - Guided Coding Exercise: Integrated Exercise – Circle Calculator
 
 ## **Instructions**
 
@@ -77,84 +77,97 @@ Only perform this if this is the first time you will setup your Git Environment
 
 ### **Step 3: Complete the Assignment**
 
-**Exercise # 05 - Guided Coding Exercise: Utilizing the Java Math API Library**
+**Exercise # 05 - Utilizing the Java Math API Library**
 
    **Objective:**
-   - Use basic Math library functions such as power, square root, rounding, and generating random numbers.
+   - Combine variable declarations, input/output, arithmetic expressions, operator precedence, type casting, and the Java `Math` API.
+   - Calculate the area and circumference of a circle given a user-input radius.
 
    **File Naming Convention:**
-   - `MathLibraryDemo.java`
+   - `CircleCalculator.java`
 
    **Notable Observations (to be discussed after completing the exercise):**
-   - The Math.pow() method takes two arguments (base and exponent) and returns a double.
-   - The Math.sqrt() method takes one argument and returns a double.
-   - The Math.round() method returns a long (whole number).
-   - Math.random() generates a pseudo-random number between 0.0 and 1.0. Each time you run the program, you'll get a different random number.
+   - This exercise combines several concepts you've learned, demonstrating how they can be used together in a practical program.
+   - The `Math.PI` constant provides a precise value of π.
+   - `Math.pow()` is used for exponentiation (raising a number to a power).
+   - `System.out.printf()` is used for formatted output, which is essential for presenting results clearly.
 
    **Java Programming Best Practices:**
-   - Use descriptive variable names.
-   - Add comments to explain what your code does.
-   - Remember that the Math class is part of the java.lang package, so you don't need to import it explicitly. It's automatically available in all Java programs.
+   - Use meaningful variable names.
+   - Add comments to explain your code.
+   - Close the `Scanner` object when you're finished with it.
+   - Format your output to make it user-friendly.
+   - Use appropriate data types (e.g., `double` for radius, area, and circumference).
       
-**Step-by-Step Instructions:**
+   **Step-by-Step Instructions:**
 
-1. Class and Main Method
-   - Create a file named `MathLibraryDemo.java`.
-   - Define the class `MathLibraryDemo ` and its `main` method.
-   ```Java
-   public class MathLibraryDemo {
-       public static void main(String[] args) {
-   
-       }
-   }
-   ```
+   1. Import the Scanner Class
+      - Create a file named `CircleCalculator.java`.
+      - At the very top of your file (before the class declaration), import the `Scanner` class.  This allows you to get input from the user.
+      ```Java
+      import java.util.Scanner;
+      ```
+      
+   2. Class and Main Method
+      - Define the class `CircleCalculator` and its main method.
+      ```Java
+      public class CircleCalculator {
+          public static void main(String[] args) {
+      
+          }
+      }
+      ```
+            
+   3. Create a Scanner Object
+      - Inside the `main` method, create a `Scanner` object.  This object will be used to read user input from the console.
+      ```Java
+      Scanner input = new Scanner(System.in);
+      ```
 
-2. Calculate Power
-   - Declare a double variable named `base`. Initialize it with a number (e.g., 2).
-   - Declare an integer variable named `exponent`. Initialize it with a number (e.g., 3).
-   - Use `Math.pow(base, exponent)` to calculate the `power` (base raised to the exponent) and store the result in a double variable named `powerResult`.
-   ```Java
-   double base = 2;
-   int exponent = 3;
-   double powerResult = Math.pow(base, exponent);
-   ```
-         
-3. Calculate Square Root
-   - Declare a double variable named `numberForSqrt`. Initialize it with a number (e.g., 16).
-   - Use `Math.sqrt(numberForSqrt)` to calculate the square root and store the result in a double variable named `sqrtResult`.
-   ```Java
-   double numberForSqrt = 16;
-   double sqrtResult = Math.sqrt(numberForSqrt);
-   ```
+   4. Prompt for Radius
+      - Use `System.out.print()` to prompt the user to enter the radius of the circle.
+      ```Java
+      System.out.print("Enter the radius of the circle: ");
+      ```
 
-4. Round a Decimal Number
-   - Declare a double variable named `decimalNumber`. Initialize it with a decimal value (e.g., 5.67).
-   - Use `Math.round(decimalNumber)` to round the decimal number to the nearest whole number (long) and store the result in a long variable named roundedNumber.
-   ```Java
-   double decimalNumber = 5.67;
-   long roundedNumber = Math.round(decimalNumber);
-   ```
-   
-5. Generate a Random Number
-   - Use `Math.random()` to generate a random number between 0.0 (inclusive) and 1.0 (exclusive). Store this random number in a double variable named `randomNumber`.
-   ```Java
-   double randomNumber = Math.random();
-   ```
-   
-6. Output the Results
-   - Use `System.out.println()` to display the value of `powerResult` with a descriptive label (e.g., "Power: ").
-   - Do the same for `sqrtResult`, r`oundedNumber`, and `randomNumber`, each with a clear label.
-   ```Java
-   System.out.println("Power: " + powerResult);
-   System.out.println("Square Root: " + sqrtResult);
-   System.out.println("Rounded Number: " + roundedNumber);
-   System.out.println("Random Number: " + randomNumber);
-   ```
-   
-7. Compile and Run
-   - Save the file as `MathLibraryDemo.java`.
-   - Compile: `javac MathLibraryDemo.java`
-   - Run: `java MathLibraryDemo`
+   5. Read Radius Input
+      - Use the `nextDouble()` method of your `Scanner` object to read the radius (which can be a decimal) and store it in a double variable named `radius`.
+      ```Java
+      double radius = input.nextDouble();
+      ```
+
+   6. Calculate Area
+      - Declare a double variable named `area`.
+      - Calculate the area of the circle using the formula: Area = π * r^2.  Use `Math.PI` for π and `Math.pow(radius, 2)` for r^2. Store the result in `area`.
+      ```Java
+      double area = Math.PI * Math.pow(radius, 2);
+      ```
+
+   7. Calculate Circumference
+      - Declare a double variable named `circumference`.
+      - Calculate the circumference of the circle using the formula: Circumference = 2 * π * r. Store the result in `circumference`.
+      ```Java
+      double circumference = 2 * Math.PI * radius;
+      ```
+
+   8. Output Results (Formatted)
+      - Use `System.out.printf()` to print the `radius`, `area`, and `circumference`.  Format the output to two decimal places using `%.2f`.  Include descriptive labels.  `%n` creates a new line.
+      ```Java
+      System.out.printf("Radius: %.2f%n", radius);
+      System.out.printf("Area: %.2f%n", area);
+      System.out.printf("Circumference: %.2f%n", circumference);
+      ```
+
+   9. Demonstrate Operator Precedence
+      - Close the `Scanner` object to release resources.
+      ```Java
+      input.close();
+      ```
+
+   10. Compile and Run
+      - Save the file as `CircleCalculator.java`.
+      - Compile the code using `javac CircleCalculator.java` in your terminal or command prompt.
+      - Run the compiled code using `java CircleCalculator`.
 
 ### **Step 4: Push Changes to GitHub**
 Once you've completed your changes, follow these steps to upload your work to your GitHub repository.
