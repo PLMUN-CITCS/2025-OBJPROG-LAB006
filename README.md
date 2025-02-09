@@ -1,7 +1,7 @@
-2025-OBJPROG-WK02S0E02
+# **2025-OBJPROG-LAB006**
 Week 02 - Introduction to Java Programming
 
-Exercise # 05 - Guided Coding Exercise: Integrated Exercise – Circle Calculator
+Laboratory # 06 - Guided Coding Exercise: Integrated Exercise – Circle Calculator
 
 ## **Instructions**
 
@@ -77,7 +77,7 @@ Only perform this if this is the first time you will setup your Git Environment
 
 ### **Step 3: Complete the Assignment**
 
-**Exercise # 05 - Utilizing the Java Math API Library**
+**Laboratory # 06 - Guided Coding Exercise: Integrated Exercise – Circle Calculator**
 
    **Objective:**
    - Combine variable declarations, input/output, arithmetic expressions, operator precedence, type casting, and the Java `Math` API.
@@ -87,17 +87,21 @@ Only perform this if this is the first time you will setup your Git Environment
    - `CircleCalculator.java`
 
    **Notable Observations (to be discussed after completing the exercise):**
-   - This exercise combines several concepts you've learned, demonstrating how they can be used together in a practical program.
-   - The `Math.PI` constant provides a precise value of π.
-   - `Math.pow()` is used for exponentiation (raising a number to a power).
-   - `System.out.printf()` is used for formatted output, which is essential for presenting results clearly.
+   - Integrated Exercise: This is an integrated exercise. It shows how the different Java concepts you've learned work together to solve a practical problem. This is a big step in learning to program.
+   - Math.PI: The use of Math.PI is a good example of using predefined constants in Java. It's much better than hardcoding a value for pi.
+   - Math.pow(): The exercise reinforces the use of Math.pow() for calculations involving exponents.
+   - Formatted Output: The emphasis on using System.out.printf() for formatted output is important. Clear, well-formatted output is essential for user-friendly programs.
+   - Problem Decomposition: The step-by-step instructions break the problem down into smaller, manageable parts. This is a good problem-solving strategy in programming.
+   - Real-World Application: Calculating the area and circumference of a circle is a simple but relatable real-world problem. This helps to make the exercise more engaging.
 
    **Java Programming Best Practices:**
-   - Use meaningful variable names.
-   - Add comments to explain your code.
-   - Close the `Scanner` object when you're finished with it.
-   - Format your output to make it user-friendly.
-   - Use appropriate data types (e.g., `double` for radius, area, and circumference).
+   - Combining Concepts: This exercise is great because it combines several key Java concepts: variable declaration, input/output, arithmetic expressions, operator precedence, type casting (if needed), and using the Math API. This is how real-world programming works!
+   - Meaningful Variable Names: Use descriptive names like radius, area, and circumference.
+   - Comments: Explain what each section of your code does.
+   - Close the Scanner: Always close the Scanner object (input.close()) when you're finished with it to release system resources.
+   - Formatted Output: Use System.out.printf() for nicely formatted output, especially when dealing with numbers and decimals. The %.2f format specifier is very useful for displaying numbers with two decimal places.
+   - Appropriate Data Types: Use double for calculations involving potentially fractional values like radius, area, and circumference.
+   - Math.PI and Math.pow(): Use Math.PI for the value of pi and Math.pow() for raising a number to a power. These are more accurate and efficient than trying to define these yourself.
       
    **Step-by-Step Instructions:**
 
